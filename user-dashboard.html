@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Utilisateur</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        button { padding: 8px 20px; border: none; border-radius: 5px; background: #b00020; color: white; cursor: pointer; }
+    </style>
+</head>
+<body>
+<h2>Espace Utilisateur</h2>
+<p>Accessible aux rôles USER et ADMIN.</p>
+
+<p><a th:href="@{/home}">Retour à l’accueil</a></p>
+
+<!-- Logout en POST obligatoire (Spring Security 6 + CSRF) : un simple lien GET ne fonctionne pas -->
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Déconnexion</button>
+</form>
+</body>
+</html>
